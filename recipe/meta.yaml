@@ -18,22 +18,28 @@ requirements:
   host:
     - python
     - pip
+    - wheel
     - ruamel
   run:
     - python
     - setuptools
     - ruamel.yaml.clib >=0.1.2
-    - ruamel.ordereddict  # [py27]
 
 test:
   imports:
     - ruamel.yaml
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://bitbucket.org/ruamel/yaml
   license: MIT
   license_file: LICENSE
   summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
+  dev_url: https://sourceforge.net/projects/ruamel-yaml/
+  doc_url: http://yaml.readthedocs.io
 
 extra:
   recipe-maintainers:

@@ -1,4 +1,4 @@
-{% set version = "0.16.12" %}
+{% set version = "0.17.10" %}
 
 package:
   name: ruamel.yaml
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/ruamel.yaml/ruamel.yaml-{{ version }}.tar.gz
-  sha256: 076cc0bc34f1966d920a49f18b52b6ad559fbe656a0748e3535cf7b3f29ebf9e
+  sha256: 106bc8d6dc6a0ff7c9196a47570432036f41d556b779c6b4e618085f57e39e67
 
 build:
   number: 1
@@ -16,24 +16,28 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
+    - python >=3.5
     - pip
     - ruamel
+    - setuptools >=20.6.8
+    - wheel
   run:
-    - python
+    - python >=3.5
     - setuptools
     - ruamel.yaml.clib >=0.1.2
-    - ruamel.ordereddict  # [py27]
 
 test:
   imports:
     - ruamel.yaml
 
 about:
-  home: https://bitbucket.org/ruamel/yaml
+  home: https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree
   license: MIT
+  license_family: MIT
   license_file: LICENSE
-  summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
+  summary: A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1
+  doc_url: http://yaml.readthedocs.io/
+  dev_url: https://sourceforge.net/projects/ruamel-yaml/
 
 extra:
   recipe-maintainers:

@@ -16,24 +16,28 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
+    - python >=3.5
     - pip
     - ruamel
+    - setuptools >=20.6.8
+    - wheel
   run:
-    - python
+    - python >=3.5
     - setuptools
     - ruamel.yaml.clib >=0.1.2
-    - ruamel.ordereddict  # [py27]
 
 test:
   imports:
     - ruamel.yaml
 
 about:
-  home: https://bitbucket.org/ruamel/yaml
+  home: https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree
   license: MIT
+  license_family: MIT
   license_file: LICENSE
-  summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
+  summary: A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1
+  doc_url: http://yaml.readthedocs.io/
+  dev_url: https://sourceforge.net/projects/ruamel-yaml/
 
 extra:
   recipe-maintainers:

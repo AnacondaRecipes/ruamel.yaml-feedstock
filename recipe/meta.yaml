@@ -1,16 +1,19 @@
+{% set name = "ruamel.yaml" %}
 {% set version = "0.16.12" %}
 
 package:
-  name: ruamel.yaml
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/ruamel.yaml/ruamel.yaml-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ruamel.yaml-{{ version }}.tar.gz
   sha256: 076cc0bc34f1966d920a49f18b52b6ad559fbe656a0748e3535cf7b3f29ebf9e
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 2
+  # The package ruamel currently is missing on s390x 
+  skip: True  # [s390x]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -19,6 +22,8 @@ requirements:
     - python
     - pip
     - ruamel
+    - setuptools >=20.6.8
+    - wheel
   run:
     - python
     - setuptools
@@ -28,12 +33,19 @@ requirements:
 test:
   imports:
     - ruamel.yaml
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
-  home: https://bitbucket.org/ruamel/yaml
+  home: https://sourceforge.net/projects/ruamel-yaml/
   license: MIT
+  license_family: MIT
   license_file: LICENSE
   summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
+  doc_url: http://yaml.readthedocs.io
+  dev_url: https://sourceforge.net/projects/ruamel-yaml/
 
 extra:
   recipe-maintainers:

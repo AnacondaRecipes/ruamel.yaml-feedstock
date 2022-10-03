@@ -42,7 +42,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
-  doc_url: http://yaml.readthedocs.io
+  doc_url: https://yaml.readthedocs.io
   dev_url: https://sourceforge.net/projects/ruamel-yaml/
 
 extra:

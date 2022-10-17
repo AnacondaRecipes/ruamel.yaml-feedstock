@@ -25,6 +25,9 @@ requirements:
   run:
     - python
     - setuptools
+    # Even though upstream lists this optional,
+    # importing ruamel.yaml fails without the cli
+    - ruamel.yaml.clib >=0.2.6  # [py<311]
 
 test:
   imports:

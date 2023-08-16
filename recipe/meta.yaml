@@ -11,7 +11,6 @@ source:
 
 build:
   number: 3
-  # The package ruamel currently is missing on s390x 
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:

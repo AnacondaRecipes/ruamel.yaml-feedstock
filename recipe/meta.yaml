@@ -11,6 +11,8 @@ source:
 
 build:
   number: 3
+  # The package ruamel currently is missing on s390x 
+  skip: True  # [s390x]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -26,6 +28,7 @@ requirements:
     - python
     - setuptools
     - ruamel.yaml.clib >=0.1.2
+    - ruamel.ordereddict  # [py27]
 
 test:
   imports:
@@ -41,7 +44,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
-  doc_url: https://yaml.readthedocs.io
+  doc_url: http://yaml.readthedocs.io
   dev_url: https://sourceforge.net/projects/ruamel-yaml/
 
 extra:

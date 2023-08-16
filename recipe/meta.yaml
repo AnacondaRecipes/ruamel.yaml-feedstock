@@ -1,5 +1,5 @@
 {% set name = "ruamel.yaml" %}
-{% set version = "0.16.12" %}
+{% set version = "0.17.21" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ruamel.yaml-{{ version }}.tar.gz
-  sha256: 076cc0bc34f1966d920a49f18b52b6ad559fbe656a0748e3535cf7b3f29ebf9e
+  sha256: 8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af
 
 build:
+
   number: 3
   # The package ruamel currently is missing on s390x 
   skip: True  # [s390x]
@@ -22,10 +23,11 @@ requirements:
     - python
     - pip
     - ruamel
-    - setuptools >=20.6.8
+    - setuptools
     - wheel
   run:
     - python
+
     - setuptools
     - ruamel.yaml.clib >=0.1.2
     - ruamel.ordereddict  # [py27]
@@ -43,8 +45,11 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
+  license_url: https://sourceforge.net/p/ruamel-yaml/code/ci/{{ version }}/tree/LICENSE
   summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
-  doc_url: http://yaml.readthedocs.io
+  description: "A YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
+  doc_url: https://yaml.readthedocs.io
+  doc_source_url: https://sourceforge.net/p/ruamel-yaml/code/ci/{{ version }}/tree/_doc/
   dev_url: https://sourceforge.net/projects/ruamel-yaml/
 
 extra:

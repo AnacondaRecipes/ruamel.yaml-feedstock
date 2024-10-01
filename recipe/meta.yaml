@@ -35,6 +35,14 @@ test:
     - pip
   commands:
     - pip check
+  downstreams:
+    - conda-auth
+    - conda-index
+    - conda-lock
+    - conda-project
+    - grayskull
+    - oauthenticator
+    - pyspnego
 
 about:
   home: https://sourceforge.net/projects/ruamel-yaml/

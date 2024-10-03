@@ -14,6 +14,8 @@ build:
   skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   script_env:
+    # To prevent setting a long description in the package metadata from the readme.
+    # Using the current readme results in an encoding mismatch on windows.
     - RUAMEL_NO_LONG_DESCRIPTION=1
 
 requirements:

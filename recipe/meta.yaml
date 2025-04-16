@@ -1,5 +1,5 @@
 {% set name = "ruamel.yaml" %}
-{% set version = "0.18.6" %}
+{% set version = "0.18.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ruamel.yaml-{{ version }}.tar.gz
-  sha256: 8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b
+  sha256: 20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58
 
 build:
   number: 0
@@ -29,6 +29,8 @@ requirements:
   run:
     - python
     - ruamel.yaml.clib >=0.2.7  # [py<313]
+  run_constrained:
+    - ruamel.yaml.jinja2 >=0.2
 
 test:
   imports:
@@ -37,14 +39,21 @@ test:
     - pip
   commands:
     - pip check
-  # downstreams:
-  #   - conda-index
-  #   - conda-lock
-  #   - conda-project
-  #   - grayskull
-  #   - oauthenticator
-  #   - pyspnego
-  #   - conda-auth
+  downstreams:
+    - conda
+    - conda-index
+    - conda-lock
+    - conda-souschef
+    - anaconda-linter
+    - conda-auth
+    - conda-project
+    - grayskull
+    - great-expectations
+    - jupyter_telemetry
+    - oauthenticator
+    - pyspnego
+    - quilt3
+    - strictyaml
 
 about:
   home: https://sourceforge.net/projects/ruamel-yaml/

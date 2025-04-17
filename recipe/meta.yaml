@@ -39,6 +39,8 @@ test:
     - pip
   commands:
     - pip check
+  # Keep this list of the downstream packages because new minor versions of ruamel.yaml
+  # can affect or even break them. We should test them before releasing to the main channel.
   downstreams:
     #- conda
 
@@ -72,7 +74,9 @@ test:
     #- oauthenticator
 
     - pyspnego
-    - quilt3
+    # quilt3 =* * does not exist (perhaps a typo or a missing channel).
+    # Update quilt3 to 6.3.1 (it doesn't require ruamel.yaml though)
+    #- quilt3
     - strictyaml
 
 about:

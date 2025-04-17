@@ -53,7 +53,9 @@ test:
     # Update to 0.1.5 or skip it because v0.1.5 is available only in the distro-tooling channel
     #- anaconda-linter
 
-    - conda-auth
+    # conda-auth 0.2.1 has requirement ruamel-yaml<0.18, but you have ruamel-yaml 0.18.10.
+    # Fix the upper bound ruamel-yaml<0.18 in the conda-auth's recipe.
+    #- conda-auth
     - conda-project
 
     #  TypeError: Can only get item pairs from a mapping.

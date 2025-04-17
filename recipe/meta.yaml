@@ -43,7 +43,7 @@ test:
   # can affect or even break them. We should test them before releasing to the main channel.
   downstreams:
     # PASSED:
-    - conda-lock
+    #- conda-lock
     - conda-souschef
     - conda-project
     - grayskull

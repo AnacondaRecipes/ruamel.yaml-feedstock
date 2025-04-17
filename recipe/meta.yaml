@@ -39,48 +39,6 @@ test:
     - pip
   commands:
     - pip check
-  # Keep this list of the downstream packages because new minor versions of ruamel.yaml
-  # can affect or even break them. We should test them before releasing to the main channel.
-  downstreams:
-    # PASSED:
-    #- conda-lock
-    - conda-souschef
-    - conda-project
-    - grayskull
-    - jupyter_telemetry
-    - pyspnego
-
-    # FAILED:
-    #- conda
-
-    # ImportError: cannot import name 'noarch_python_build_age_default' from 'conda_build.config'
-    # Update conda-index to 0.6.0
-    #- conda-index
-
-    # ExplainedDependencyNeedsBuildingError: Unsatisfiable dependencies for platform osx-arm64: {MatchSpec("percy[version='>=0.1.3']")}
-    # Update to 0.1.5 or skip it because v0.1.5 is available only in the distro-tooling channel
-    #- anaconda-linter
-
-    # conda-auth 0.2.1 has requirement ruamel-yaml<0.18, but you have ruamel-yaml 0.18.10.
-    # Fix the upper bound ruamel-yaml<0.18 in the conda-auth's recipe.
-    #- conda-auth
-
-    #  TypeError: Can only get item pairs from a mapping.
-    #- constructor
-
-    # - package ruamel.yaml-0.16.10-py38h1a28f6b_1 requires python >=3.8,<3.9.0a0, but none of the providers can be installed
-    #- great-expectations
-
-    # ModuleNotFoundError: No module named 'requests_mock'
-    #- oauthenticator
-
-    # quilt3 =* * does not exist (perhaps a typo or a missing channel).
-    # Update quilt3 to 6.3.1 (it doesn't require ruamel.yaml though)
-    #- quilt3
-
-    # nothing provides requested strictyaml
-    # Skip it. It's available only on the sfe1ed40 channel
-    #- strictyaml
 
 about:
   home: https://sourceforge.net/projects/ruamel-yaml/

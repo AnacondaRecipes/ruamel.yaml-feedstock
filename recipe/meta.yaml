@@ -39,6 +39,14 @@ test:
     - pip
   commands:
     - pip check
+  downstreams:
+    - conda 25.3.1
+    - conda 25.3.0
+    - conda 25.1.1    # [py<313]
+    - conda 24.11.3   # [py<313]
+    - conda 24.9.2    # [py<313]
+    - conda 24.7.1    # [py<313]
+    - conda 23.11.0   # [py<312]
 
 about:
   home: https://sourceforge.net/projects/ruamel-yaml/

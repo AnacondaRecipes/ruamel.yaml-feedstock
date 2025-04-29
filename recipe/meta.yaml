@@ -28,7 +28,7 @@ requirements:
     - wheel
   run:
     - python
-    - ruamel.yaml.clib >=0.2.7  # [py<313]
+    - ruamel.yaml.clib >=0.2.7
   run_constrained:
     - ruamel.yaml.jinja2 >=0.2
 

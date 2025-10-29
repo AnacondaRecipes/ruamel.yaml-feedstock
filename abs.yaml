@@ -1,2 +1,2 @@
-channels:
-  - https://staging.continuum.io/prefect/fs/ruamel.yaml.clib-feedstock/pr7/0935049
+build_env_vars:
+  ANACONDA_ROCKET_ENABLE_PY314 : yes

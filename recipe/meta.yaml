@@ -1,13 +1,13 @@
 {% set name = "ruamel.yaml" %}
-{% set version = "0.18.10" %}
+{% set version = "0.18.16" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ruamel.yaml-{{ version }}.tar.gz
-  sha256: 20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ruamel.yaml-{{ version }}.tar.gz
+  sha256: a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a
 
 build:
   number: 0
@@ -21,6 +21,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
   host:
     - python
     - pip
@@ -45,8 +46,8 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1"
-  description: "A YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
+  summary: A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1
+  description: A YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order
   doc_url: https://yaml.readthedocs.io
   dev_url: https://sourceforge.net/projects/ruamel-yaml/
 
